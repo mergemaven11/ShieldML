@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="flex flex-row h-screen">
+        <!-- Sidebar -->
+        <div class="flex flex-col w-1/5 bg-gray-800">
+                <div class="flex items-center justify-center h-16">
+                  <h1 class="text-white font-bold text-lg border-b-2">Risk buddy</h1>
+                </div>
+                <nav class="flex-1 px-2 py-4">
+                    <a href="#" class="block text-gray-400 hover:text-white hover:bg-gray-700 py-2 px-4 rounded accordion">
+                      Dashboard
+                      <span class="float-right">+</span>
+                    </a>
+                    <div class="accordion-panel hidden">
+                      <p>Dashboard content goes here</p>
+                    </div>
+                    <a href="#" class="block text-gray-400 hover:text-white hover:bg-gray-700 py-2 px-4 rounded accordion">
+                      Profile
+                      <span class="float-right">+</span>
+                    </a>
+                    <div class="accordion-panel hidden">
+                      <p>Profile content goes here</p>
+                    </div>
+                    <a href="#" class="block text-gray-400 hover:text-white hover:bg-gray-700 py-2 px-4 rounded accordion">
+                      Settings
+                      <span class="float-right">+</span>
+                    </a>
+                    <div class="accordion-panel hidden">
+                      <p>Settings content goes here</p>
+                    </div>
+                  </nav>
+              </div>
+        <!-- Main content -->
+        <div class="flex flex-col w-4/5 bg-white">
+            <nav class="bg-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between h-16">
+                        <!-- Add navbar content here -->
+                    </div>
+                </div>
+            </nav>
+            <main class="flex-grow p-6 rounded-md">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.accordion').click(function() {
+              $(this).toggleClass('active');
+              $(this).next('.accordion-panel').toggleClass('hidden');
+              if ($(this).hasClass('active')) {
+                $(this).find('span').html('-');
+              } else {
+                $(this).find('span').html('+');
+              }
+            });
+          });
+    </script>
+</body>
+</html>
