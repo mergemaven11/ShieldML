@@ -1,6 +1,11 @@
 ## ShieldML
 
 
+This repository contains a machine learning project for fraud detection and risk assessment in financial transactions. The project uses a combination of supervised and unsupervised learning algorithms to classify transactions as either fraudulent or legitimate based on various features and risk factors. The models were trained on a large dataset of real-world financial transactions and evaluated using various metrics such as accuracy, precision, recall, and F1 score. The code is written in Python and uses popular machine learning libraries such as Scikit-learn, Pandas, and Numpy. 
+
+The repository also includes a detailed README file with instructions for running the code and reproducing the results.
+
+
 ## Testing
 
 Run all test with the following command:
