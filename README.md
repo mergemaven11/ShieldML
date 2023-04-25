@@ -1,4 +1,4 @@
-## Risk buddy
+## ShieldML
 
 
 ## Testing
@@ -13,7 +13,7 @@ python -m pytest -vvv -x
 
 ```arduino
 
-risk_buddy/
+ShieldML/
 ├── data/
 │   ├── raw/
 │   ├── processed/
@@ -127,6 +127,5 @@ Tech used in this application
 - [Pandas](https://pandas.pydata.org/)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [matplotlib](https://matplotlib.org/)
-- [Ui templates to try](https://www.codementor.io/@chirilovadrian360/flask-website-templates-open-source-seed-projects-1b6tya9jnl)
 - [Spectre.css](https://picturepan2.github.io/spectre/getting-started.html)
 - [Ruff](https://beta.ruff.rs/docs/) Need to add!
