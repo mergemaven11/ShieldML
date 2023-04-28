@@ -5,13 +5,18 @@ import tensorflow as tf
 from .preprocessing import load_and_process
 
 class FraudDetectionModel:
-    def __init__(self):
+    def __init__(
+        self, 
+        model_path='data/models/fraud_detection_model.pkl', 
+        raw_data_path='data/raw/fraudTest.csv'
+        ):
         self.model = None
+        self.path = model_path
+        self.raw_data_path = raw_data_path
 
-
-    def train_model():
+    def train_model(self):
         # Load and preprocess the data
-        X_train, X_test, y_train, y_test = load_and_process()
+        X_train, X_test, y_train, y_test = load_and_process(self.raw_data_path)
 
         # Define the Tensorflow model
         model = tf.keras.Sequential([
@@ -36,10 +41,9 @@ class FraudDetectionModel:
             )
         
         # Save the trained model to the 'models' directory
-        model_path = 'models/fraud_detection_model.pkl'
+        model_path = os.path.join('data', 'models', 'fraud_detection_model.pkl')
         with open(model_path, 'wb') as f:
             pickle.dump(model, f)
-
         return model
     
     def predict(self, X):
