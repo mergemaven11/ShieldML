@@ -4,9 +4,11 @@ from sklearn.model_selection import train_test_split
 import pathlib as pl
 from tqdm import tqdm
 
-from src.utils.sml_logger import Logger
+from src.utils.sml_logger import logger_config
 
 # from src.utils.sml_logger import Logger
+
+Logger = logger_config()
 
 def load_and_process(raw_path):
     # Load the data 
